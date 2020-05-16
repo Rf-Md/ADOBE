@@ -29,16 +29,9 @@ class CartItem extends Component {
 
   static getDerivedStateFromProps = (nextProps, prevState) => {
     let newState = { ...prevState }
-    /* if (this.state.currentItem.itemsCount != newState.currentItem.itemsCount) {
-      console.log("aaaaaaaaaaaaa")
-      return newState
-
-    } */
-
     if (newState.currentItem.itemsCount > 1) {
       return newState
     }
-    console.log('arif......1......nextProps, prevState', nextProps, prevState)
     if (nextProps.item && prevState.name !== nextProps.item.name) {
       newState.currentItem = nextProps.item ? nextProps.item : {}
       newState.actualPrice = nextProps.item ? nextProps.item.price.actual : 0
